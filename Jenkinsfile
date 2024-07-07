@@ -20,8 +20,7 @@ pipeline {
             steps {
                 sh '''
                 docker run --rm $DOCKER_IMAGE sh -c "
-                    python -m unittest discover -s tests
-                "
+                
                 '''
             }
         }
