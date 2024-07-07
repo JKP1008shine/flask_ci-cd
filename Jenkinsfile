@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                docker run --rm $DOCKER_IMAGE sh -c "
+                docker run --rm $DOCKER_IMAGE sh -c
                 
                 '''
             }
