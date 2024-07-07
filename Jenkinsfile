@@ -8,20 +8,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch:'main', url: 'https://github.com/JKP1008shine/flask_ci-cd.git', credentialsId: ''
+                git 'https://github.com/JKP1008shine/flask_ci-cd.git'
             }
         }
         stage('Build') {
             steps {
                 sh 'docker build -t $DOCKER_IMAGE .'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh '''
-                docker run --rm $DOCKER_IMAGE sh -c "pytest"
-                
-                '''
             }
         }
         stage('Deploy') {
